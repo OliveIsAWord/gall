@@ -1,0 +1,9 @@
+[package]
+name = "compiler"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dbg-pls = {version = "0.3.4"}
+parser = {path = "../parser"}
+symbolize = {path = "../symbolize"}

@@ -1,0 +1,22 @@
+[package]
+name = "gall"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+    "libs/lexer",
+    "libs/parser",
+    "libs/compiler",
+    "libs/symbolize",
+]
+
+[dependencies]
+dbg-pls = {version = "0.3.4", features = ["colors", "derive", "pretty"]}
+
+lexer = {path = "libs/lexer"}
+parser = {path = "libs/parser"}
+compiler = {path = "libs/compiler"}
+symbolize = {path = "libs/symbolize"}

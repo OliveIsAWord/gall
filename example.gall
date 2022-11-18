@@ -1,0 +1,2 @@
+man(`Socrates).
+mortal(x) :- man(x).
