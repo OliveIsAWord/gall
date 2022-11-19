@@ -38,6 +38,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "arborist"
+version = "0.1.0"
+dependencies = [
+ "chumsky",
+ "dbg-pls",
+ "lexer",
+ "symbolize",
+]
+
+[[package]]
 name = "autocfg"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -180,6 +190,7 @@ checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 name = "gall"
 version = "0.1.0"
 dependencies = [
+ "arborist",
  "compiler",
  "dbg-pls",
  "lexer",
@@ -312,9 +323,9 @@ dependencies = [
 name = "parser"
 version = "0.1.0"
 dependencies = [
+ "arborist",
  "chumsky",
  "dbg-pls",
- "lexer",
  "symbolize",
 ]
 
@@ -448,6 +459,7 @@ checksum = "f67ad224767faa3c7d8b6d91985b78e70a1324408abcb1cfcc2be4c06bc06043"
 name = "symbolize"
 version = "0.1.0"
 dependencies = [
+ "dbg-pls",
  "indexmap",
 ]
 

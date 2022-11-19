@@ -11,12 +11,14 @@ members = [
     "libs/parser",
     "libs/compiler",
     "libs/symbolize",
+    "libs/arborist",
 ]
 
 [dependencies]
-dbg-pls = {version = "0.3.4", features = ["colors", "derive", "pretty"]}
+dbg-pls = {version = "0.3.4", features = ["colors", "pretty"]}
 
 lexer = {path = "libs/lexer"}
 parser = {path = "libs/parser"}
 compiler = {path = "libs/compiler"}
 symbolize = {path = "libs/symbolize"}
+arborist = {path = "libs/arborist"}

@@ -1,14 +1,26 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+use arborist::TokenTree;
+use symbolize::{Symbol, SymbolTable};
+use dbg_pls::DebugPls;
+
+#[derive(Clone, Debug, DebugPls)]
+pub enum Value {
+    Atom(Symbol),
+    Variable(Symbol),
+    Functor(Functor),
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[derive(Clone, Debug, DebugPls)]
+pub struct Functor {
+    name: Symbol,
+    args: Vec<Value>,
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[derive(Clone, Debug, DebugPls)]
+pub enum Clause {
+    Fact(Functor),
+    Rule(Functor, Value),
+}
+
+pub fn parse(_tt: &[TokenTree], _symbol_table: &mut SymbolTable) -> Vec<Clause> {
+    todo!()
 }

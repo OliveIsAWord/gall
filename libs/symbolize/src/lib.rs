@@ -1,8 +1,9 @@
+use dbg_pls::DebugPls;
 use indexmap::IndexSet;
 use std::borrow::Cow;
 use std::fmt;
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, DebugPls)]
 pub struct Symbol(u64);
 
 impl Symbol {
@@ -23,14 +24,17 @@ pub struct SymbolTable {
 }
 
 impl SymbolTable {
+    #[must_use]
     pub fn new() -> Self {
         Self::default()
     }
     // TODO: Remove this annotation when `anonymous_lifetime_in_impl_trait` stabilizes
+    #[must_use]
     pub fn create_symbol<'a>(&mut self, symbol: impl Into<Cow<'a, str>>) -> Symbol {
         // Forward to a non-generic function to reduce code bloat
         self.create_symbol_impl(symbol.into())
     }
+    #[must_use]
     fn create_symbol_impl(&mut self, symbol: Cow<'_, str>) -> Symbol {
         let index = self
             .map

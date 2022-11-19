@@ -1,8 +1,10 @@
 [package]
-name = "symbolize"
+name = "arborist"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+chumsky = "0.8.0"
 dbg-pls = {version = "0.3.4", features = ["derive"]}
-indexmap = "1.9.2"
+lexer = {path = "../lexer"}
+symbolize = {path = "../symbolize"}
